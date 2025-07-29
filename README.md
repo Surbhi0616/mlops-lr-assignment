@@ -20,7 +20,7 @@ This repository implements a complete MLOps pipeline using a simple Linear Regre
 ├── src/ # All source code
 │ ├── train.py # Model training script
 │ ├── quantize.py # Manual quantization script
-│ ├── predict.py # Prediction script for Docker run
+│ └── predict.py # Prediction script for Docker run
 ├── tests/
 │ └── test_train.py # Unit tests for training pipeline
 ├── artifacts/ # Auto-generated models, inputs, weights
@@ -31,7 +31,6 @@ This repository implements a complete MLOps pipeline using a simple Linear Regre
 └── README.md
 
 
-
 ---
 
 ## How to Run Locally
@@ -39,24 +38,29 @@ This repository implements a complete MLOps pipeline using a simple Linear Regre
 python src/train.py
 python src/quantize.py
 python src/predict.py
+
 Sample Output:
-bash
-Copy code
 R2 Score: 0.57
 Mean Squared Error: 0.55
+
 Quantized Inference Sample: [2.91 2.39 2.11 2.76 3.52]
+
 Sample Predictions: [2.91 2.39 2.11 2.76 3.52]
+
 How to Run with Docker
 Make sure Docker is installed and running:
 
 docker build -t mlops-lr .
 docker run mlops-lr
 Sample Docker Output:
-bash
-Copy code
+
 R2 Score: 0.57
+
 Mean Squared Error: 0.55
+
 Sample Predictions: [2.91 2.39 2.11 2.76 3.52]
+
+
 CI/CD Workflow (GitHub Actions)
 A GitHub Actions workflow (ci.yml) automates the pipeline on every push to the main branch.
 
